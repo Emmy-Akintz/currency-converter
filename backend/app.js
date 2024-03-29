@@ -18,12 +18,25 @@ app.use(apiLimiter)
 
 //! Conversion router
 app.post('/api/convert', async (req, res) => {
-    const {from, to, amount} = req.body //! 14.54
-    console.log({from, to, amount});
     try {
-        
+        // get the user data
+        const { from, to, amount } = req.body
+        console.log({ from, to, amount });
+        //  construct the api
+        const url = `${API_URI}/${API_KEY}/pair/${from}/${to}/${amount}`
+        const response = await axios.get(url)
+        if (response.data && response.data.result === 'success') {
+            res.json({
+                base: from,
+                target: to,
+                conversionRate: response.data.conversion_rate,
+                convertedAmount: response.data.conversion_result
+            })
+        } else {
+            res.json({ message: 'Error converting currency', details: response.data })
+        }
     } catch (error) {
-        
+        res.json({ message: 'Error converting currency', details: error.message })
     }
 })
 
