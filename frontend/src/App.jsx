@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./CurrencyConverter.css";
 
+const serverLink = import.meta.env.VITE_SERVER_LINK
+
 function App() {
   const [formData, setFormData] = useState({
     from: "",
@@ -26,7 +28,7 @@ function App() {
     // http request
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/convert',
+        serverLink,
         formData
       )
       setResult(response?.data)

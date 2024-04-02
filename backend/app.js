@@ -15,7 +15,7 @@ const apiLimiter = rateLimit({
 
 //! Cors options
 const corsOptions = {
-    origin: ['http://localhost:5173']
+    origin: ['http://localhost:5173', process.env.ALLOWED_SERVER]
 }
 
 //! Middlewares
