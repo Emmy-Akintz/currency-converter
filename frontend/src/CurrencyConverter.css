@@ -48,7 +48,8 @@ body {
 }
 
 .input,
-.submit-btn {
+.submit-btn,
+.submit-btn-loading {
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
@@ -69,6 +70,13 @@ body {
   background-color: #007bff;
   color: white;
   cursor: pointer;
+  border: none;
+}
+
+.submit-btn-loading {
+  background-color: #84b4e7;
+  color: white;
+  cursor: wait;
   border: none;
 }
 
