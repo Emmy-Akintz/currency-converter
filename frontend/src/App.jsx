@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./CurrencyConverter.css";
+import { Helmet } from 'react-helmet'
 
 const serverLink = import.meta.env.VITE_SERVER_LINK
 
@@ -40,6 +41,10 @@ function App() {
 
   return (
     <div>
+      // title bar
+      <Helmet>
+        <title>Currency-converter</title>
+      </Helmet>
       <section className="hero">
         <h1>Global Currency Converter</h1>
         <p>Your go-to solution for real-time currency conversions worldwide.</p>
