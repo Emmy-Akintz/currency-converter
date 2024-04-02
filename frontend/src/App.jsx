@@ -41,7 +41,7 @@ function App() {
 
   return (
     <div>
-      // title bar
+      {/* title bar */}
       <Helmet>
         <title>Currency-converter</title>
       </Helmet>
