@@ -1,4 +1,4 @@
-import React, { useState } from "react"; //!25.07..
+import React, { useState } from "react";
 import axios from "axios";
 import "./CurrencyConverter.css";
 
@@ -23,6 +23,17 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // http request
+    try {
+      const response = await axios.post(
+        'http://localhost:5000/api/convert',
+        formData
+      )
+      setResult(response?.data)
+      setError("")
+    } catch (error) {
+      setError('Error', error?.response ? error?.response?.data : error?.message)
+    }
   };
 
   return (
