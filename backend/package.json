@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app.js"
   },
-  "keywords": [],
+  "keywords": ["api", "server", "currency", "currency-converter", "backend", "express js", "node js", "MERN"],
   "author": "",
   "license": "ISC",
   "dependencies": {
