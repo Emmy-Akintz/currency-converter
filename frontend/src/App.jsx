@@ -89,8 +89,8 @@ function App() {
             type="number"
             className="input"
           />
-          <button type="submit" className={isLoading ? "submit-btn-loading" : "submit-btn"} disabled={isLoading}>
-            Convert
+          <button type="submit" className={isLoading ? "loader-container" : "submit-btn"} disabled={isLoading}>
+            {isLoading ? <div className='loader'></div> : <div>Convert</div>}
           </button>
         </form>
         {result && (

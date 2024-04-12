@@ -48,8 +48,7 @@ body {
 }
 
 .input,
-.submit-btn,
-.submit-btn-loading {
+.submit-btn {
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
@@ -70,13 +69,6 @@ body {
   background-color: #007bff;
   color: white;
   cursor: pointer;
-  border: none;
-}
-
-.submit-btn-loading {
-  background-color: #84b4e7;
-  color: white;
-  cursor: wait;
   border: none;
 }
 
@@ -124,5 +116,40 @@ body {
 
   .submit-btn {
     grid-column: 1 / -1;
+  }
+}
+
+/* loader */
+.loader-container {
+  width: 100%;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.loader {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: block;
+  margin:15px auto;
+  position: relative;
+  background: #FFF;
+  box-shadow: -24px 0 #FFF, 24px 0 #FFF;
+  box-sizing: border-box;
+  animation: shadowPulse 2s linear infinite;
+}
+
+@keyframes shadowPulse {
+  33% {
+    background: #FFF;
+    box-shadow: -24px 0 #007bff, 24px 0 #FFF;
+  }
+  66% {
+    background: #007bff;
+    box-shadow: -24px 0 #FFF, 24px 0 #FFF;
+  }
+  100% {
+    background: #FFF;
+    box-shadow: -24px 0 #FFF, 24px 0 #007bff;
   }
 }
